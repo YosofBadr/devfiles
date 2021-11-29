@@ -4,6 +4,6 @@ metadata:
 components:
   - name: test
     container:
-      image: 964516670147.dkr.ecr.us-west-2.amazonaws.com/non-existent-image:latest
+      image: 964516670147.dkr.ecr.us-west-2.amazonaws.com/non-existent-imagesdjfjsdhfakjhdfkj:latest
       mountSources: true
       command: ['sleep', 'infinity']
