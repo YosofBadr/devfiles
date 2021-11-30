@@ -4,6 +4,6 @@ metadata:
 components:
   - name: test
     container:
-      image: nonsdsdsdsdseistent.com
+      image: 123456789000.dkr.ecr.us-west-2.amazonaws.com/aws-cloud-9-al-2-default-customer-image:latest
       mountSources: true
       command: ['sleep', 'infinity']
