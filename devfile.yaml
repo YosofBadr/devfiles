@@ -1,14 +1,14 @@
-schemaVersion: 2.1.0
+schemaVersion: 2.0.0
 metadata:
-  name: mydevfile
+  name: public-repository
 components:
-  - name: python
+  - name: go
     container:
-      image: python:latest
+      image: golang
       mountSources: true
-      command: ["sleep", "infinity"]
+      command: ['sleep', '86400']
 commands:
   - id: testCommands
     exec:
-      component: pythonHelp
-      commandLine: "python --help"
+      component: go
+      commandLine: "go -h"
