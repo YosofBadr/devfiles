@@ -1,0 +1,14 @@
+schemaVersion: 2.1.0
+metadata:
+  name: mydevfile
+components:
+  - name: python
+    container:
+      Image: python:latest,
+      MemoryLimit: "3Gb",
+      Command:     []string{"sleep", "infinity"},
+commands:
+  - id: testCommands
+    exec:
+      component: pythonHelp
+      commandLine: "python --help"
