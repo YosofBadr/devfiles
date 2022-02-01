@@ -4,7 +4,7 @@ metadata:
 components:
   - name: python
     container:
-      Image: python:latest,
+      image: python:latest
       mountSources: true
       command: ["sleep", "infinity"]
 commands:
