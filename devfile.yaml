@@ -16,4 +16,4 @@ commands:
   - id: testcommand
     exec:
       component: aws-runtime
-      commandLine: "python --help"
+      commandLine: "touch bob"
