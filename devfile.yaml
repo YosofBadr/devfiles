@@ -8,7 +8,7 @@ components:
       mountSources: true
       command: ['sleep', '86400']
 commands:
-  - id: testCommand
+  - id: testcommand
     exec:
       component: go
       commandLine: "go"
