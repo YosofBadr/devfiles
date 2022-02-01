@@ -16,4 +16,4 @@ commands:
   - id: testcommand
     exec:
       component: aws-runtime
-      commandLine: "go"
+      commandLine: "python --help"
