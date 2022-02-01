@@ -9,7 +9,7 @@ metadata:
 components:
   - name: aws-runtime
     container:
-      image: IMAGE_URL
+      image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
       command: ['sleep', 'infinity']
 commands:
