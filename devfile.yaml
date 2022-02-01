@@ -5,8 +5,8 @@ components:
   - name: python
     container:
       Image: python:latest,
-      MemoryLimit: "3Gb",
-      Command:     []string{"sleep", "infinity"},
+      mountSources: true
+      command: ["sleep", "infinity"]
 commands:
   - id: testCommands
     exec:
