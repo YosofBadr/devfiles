@@ -7,3 +7,9 @@ components:
       image: golang
       mountSources: true
       command: ['sleep', '86400']
+ commands:
+  - id: testCommand
+    exec:
+      component: go
+      commandLine: "go"
+      workingDir: "/go"
