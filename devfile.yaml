@@ -7,7 +7,7 @@ components:
       image: golang
       mountSources: true
       command: ['sleep', '86400']
- commands:
+commands:
   - id: testCommand
     exec:
       component: go
