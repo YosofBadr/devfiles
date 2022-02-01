@@ -1,20 +1,45 @@
 schemaVersion: 2.0.0
 metadata:
-  name: aws-universal
-  version: 1.0.1
-  displayName: AWS Universal
-  description: Stack with AWS Universal Tooling
-  tags: ["aws", "al2"]
-  projectType: "aws"
+  description: Stack with the latest Go version
+  displayName: Go Runtime
+  icon: https://raw.githubusercontent.com/devfile-samples/devfile-stack-icons/main/golang.svg
+  language: go
+  name: go
+  projectType: go
+  tags:
+    - Go
+  version: 1.0.0
+starterProjects:
+  - name: go-starter
+    git:
+      checkoutFrom:
+        revision: main
+      remotes:
+        origin: https://github.com/devfile-samples/devfile-stack-go.git
 components:
-  - name: aws-runtime
-    container:
-      image: IMAGE_URL
+  - container:
+      endpoints:
+        - name: http
+          targetPort: 8080
+      image: golang:latest
+      memoryLimit: 1024Mi
       mountSources: true
-      command: ['sleep', 'infinity']
+      sourceMapping: /project
+    name: runtime
 commands:
-  - id: testcommand
-    exec:
-      component: go
-      commandLine: "go"
-      workingDir: "/go"
+  - exec:
+      commandLine: GOCACHE=/project/.cache go build main.go
+      component: runtime
+      group:
+        isDefault: true
+        kind: build
+      workingDir: /project
+    id: build
+  - exec:
+      commandLine: ./main
+      component: runtime
+      group:
+        isDefault: true
+        kind: run
+      workingDir: /project
+    id: run
