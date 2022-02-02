@@ -17,4 +17,3 @@ commands:
     exec:
       component: aws-runtime
       commandLine: "touch bob"
-      workingDir: /
