@@ -7,7 +7,7 @@ metadata:
   tags: ["aws", "al2"]
   projectType: "aws"
 components:
-  - name: aws-runtime
+  - name: aws-universal
     container:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
