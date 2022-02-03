@@ -13,7 +13,7 @@ components:
       mountSources: true
       command: ['sleep', 'infinity']
 commands:
-  - id: testcommand
+  - id: testcomand
     exec:
       component: aws-universal
       commandLine: "touch amy"
