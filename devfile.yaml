@@ -1,6 +1,6 @@
 schemaVersion: 2.0.0
 metadata:
-  name: aws-universal
+  name: aws
   version: 1.0.1
   displayName: AWS Universal
   description: Stack with AWS Universal Tooling
