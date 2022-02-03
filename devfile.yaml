@@ -16,4 +16,4 @@ commands:
   - id: testcomand
     exec:
       component: aws-universal
-      commandLine: "touch amy"
+      commandLine: "touch yosof"
