@@ -15,5 +15,5 @@ components:
 commands:
   - id: testcommand
     exec:
-      component: aws-runtime
+      component: aws-universal
       commandLine: "touch bob"
