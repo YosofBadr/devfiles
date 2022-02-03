@@ -16,5 +16,9 @@ commands:
   - id: testcomand
     exec:
       component: aws-universal
-      commandLine: "touch yosof"
+      commandLine: "touch file1"
       workingDir: /projects
+  - id: testcomand
+    exec:
+      component: aws-universal
+      commandLine: "touch file2"
