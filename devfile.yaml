@@ -1,24 +1,24 @@
 schemaVersion: 2.0.0
 metadata:
-  name: aws
-  version: 1.0.1
-  displayName: AWS Universal
-  description: Stack with AWS Universal Tooling
-  tags: ["aws", "al2"]
-  projectType: "aws"
+  name: golang
 components:
-  - name: aws-universal
+  - name: foo
     container:
-      image: public.ecr.aws/amazonlinux/amazonlinux:2
+      image: golang
       mountSources: true
-      command: ['sleep', 'infinity']
+      command: ['sleep', '600']
+  - name: foo2
+    container:
+      image: golang
+      mountSources: true
+      command: ['sleep', '601']
 commands:
   - id: testcomand
     exec:
-      component: aws-universal
+      component: foo
       commandLine: "touch file1"
       workingDir: /projects
   - id: testcomand
     exec:
-      component: aws-universal
+      component: foo2
       commandLine: "touch file2"
