@@ -13,7 +13,7 @@ components:
       mountSources: true
       command: ['sleep', 'infinity']
 commands:
-  - id: testcomand
+  - id: testcommand
     exec:
       component: aws-universal
       commandLine: "touch file1"
