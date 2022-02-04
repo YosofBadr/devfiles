@@ -18,7 +18,7 @@ commands:
       component: foo
       commandLine: "touch file1"
       workingDir: /projects
-  - id: testcomand
+  - id: testcomand2
     exec:
       component: foo2
       commandLine: "touch file2"
