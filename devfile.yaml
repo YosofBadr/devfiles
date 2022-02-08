@@ -18,11 +18,7 @@ commands:
       component: aws-universal
       commandLine: "touch file1"
       workingDir: /projects
-  - id: infcommand
+  - id: longcommand
     exec:
       component: aws-universal
-      commandLine: "while sleep 1; do echo 'Hi'; done"
-  - id: infcommand2
-    exec:
-      component: aws-universal
-      commandLine: "touch bob ; touch amy ;"
+      commandLine: "bash testscript.sh"
