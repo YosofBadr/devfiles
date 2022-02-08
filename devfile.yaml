@@ -25,4 +25,4 @@ commands:
   - id: infcommand2
     exec:
       component: aws-universal
-      commandLine: "touch bob; touch amy;"
+      commandLine: "touch bob ; touch amy ;"
