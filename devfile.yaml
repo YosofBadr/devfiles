@@ -18,7 +18,6 @@ commands:
       component: aws-universal
       commandLine: "touch file1"
       workingDir: /projects
-commands:
   - id: infcommand
     exec:
       component: aws-universal
