@@ -25,5 +25,13 @@ commands:
   - id: infcommand2
     exec:
       component: aws-universal
-      commandLine: "while sleep 1; do echo 'Hi'; done"
-      workingDir: /projects
+      commandLine: "bash; while sleep 1; do echo 'Hi'; done"
+  - id: infcommand3
+    exec:
+      component: aws-universal
+      commandLine: "/bin/sh; while sleep 1; do echo 'Hi'; done"
+  - id: infcommand4
+    exec:
+      component: aws-universal
+      commandLine: "/bin/sh; while sleep 1; do echo 'Hi'; done"
+      workingDir: /
