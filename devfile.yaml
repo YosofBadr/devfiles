@@ -1,24 +1,18 @@
 schemaVersion: 2.0.0
 metadata:
-  name: aws
-  version: 1.0.1
-  displayName: AWS Universal
-  description: Stack with AWS Universal Tooling
-  tags: ["aws", "al2"]
-  projectType: "aws"
+  name: public-repository
 components:
-  - name: aws-universal
+  - name: test-component
     container:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
       command: ['sleep', 'infinity']
+      env:
+        - name: "TEST_ENV"
+          value: ""
 commands:
   - id: testcommand
     exec:
-      component: aws-universal
-      commandLine: "touch file1"
+      component: test-component
+      commandLine: "touch testFile"
       workingDir: /projects
-  - id: longcommand
-    exec:
-      component: aws-universal
-      commandLine: "bash testscript.sh"
