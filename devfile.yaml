@@ -16,3 +16,7 @@ commands:
       component: test-component
       commandLine: "touch testFile"
       workingDir: /projects
+  - id: testcommand2
+    exec:
+      component: test-component
+      commandLine: "rm doesntexit"
