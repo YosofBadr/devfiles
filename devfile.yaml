@@ -9,6 +9,6 @@ metadata:
 components:
   - name: aws-runtime
     container:
-      image: 106560262141.dkr.ecr.us-east-1.amazonaws.com/barsecrrepo-ad207fc7d19b86f015d701f99fe44c9ad46b24b9:b6a72c8a-243b-40a7-8c74-2e4cd38ecbb6_universal-image_main
+      image: 071424567641.dkr.ecr.eu-west-1.amazonaws.com/barsecrrepo-28283ce41ad8cae7656202dee5511a753cbae454:live_universal_100
       mountSources: true
       command: ['sleep', 'infinity']
