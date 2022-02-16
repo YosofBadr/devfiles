@@ -1,22 +1,14 @@
 schemaVersion: 2.0.0
 metadata:
-  name: public-repository
+  name: aws-universal
+  version: 1.0.1
+  displayName: AWS Universal
+  description: Stack with AWS Universal Tooling
+  tags: ["aws", "al2"]
+  projectType: "aws"
 components:
-  - name: test-component
+  - name: aws-runtime
     container:
-      image: public.ecr.aws/amazonlinux/amazonlinux:2
+      image: 106560262141.dkr.ecr.us-east-1.amazonaws.com/barsecrrepo-ad207fc7d19b86f015d701f99fe44c9ad46b24b9:b6a72c8a-243b-40a7-8c74-2e4cd38ecbb6_universal-image_main
       mountSources: true
       command: ['sleep', 'infinity']
-      env:
-        - name: "TEST_ENV"
-          value: ""
-commands:
-  - id: testcommand
-    exec:
-      component: test-component
-      commandLine: "touch testFile"
-      workingDir: /projects
-  - id: testcommand2
-    exec:
-      component: test-component
-      commandLine: "rm doesntexit"
