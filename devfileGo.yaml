@@ -6,4 +6,4 @@ components:
     container:
       image: golang
       mountSources: true
-      command: ['sleep', '86400']
+      command: ['sleep', 'infinity']
