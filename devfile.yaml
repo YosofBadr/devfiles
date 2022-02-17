@@ -17,4 +17,4 @@ components:
           path: /var/lib/docker
   - name: docker-store
     volume:
-        size: 16Gish-4.2$ 
+        size: 16G
