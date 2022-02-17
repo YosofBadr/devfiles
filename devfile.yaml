@@ -1,14 +1,9 @@
 schemaVersion: 2.0.0
 metadata:
-  name: aws-universal
-  version: 1.0.1
-  displayName: AWS Universal
-  description: Stack with AWS Universal Tooling
-  tags: ["aws", "al2"]
-  projectType: "aws"
+  name: public-repository
 components:
-  - name: aws-runtime
+  - name: go
     container:
-      image: 106560262141.dkr.ecr.us-east-1.amazonaws.com/barsecrrepo-ad207fc7d19b86f015d701f99fe44c9ad46b24b9:live_universal_100
+      image: golang
       mountSources: true
-      command: ['sleep', 'infinity']
+      command: ['sleep', '86400']
