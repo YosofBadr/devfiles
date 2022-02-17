@@ -1,20 +1,9 @@
 schemaVersion: 2.0.0
 metadata:
-  name: aws-universal
-  version: 1.0.1
-  displayName: AWS Universal
-  description: Stack with AWS Universal Tooling
-  tags: ["aws", "al2"]
-  projectType: "aws"
+  name: public-repository
 components:
-  - name: aws-runtime
+  - name: go
     container:
-      image: public.ecr.aws/aws-mde/universal-image:latest
+      image: golang
       mountSources: true
       command: ['sleep', 'infinity']
-      volumeMounts:
-        - name: docker-store
-          path: /var/lib/docker
-  - name: docker-store
-    volume:
-        size: 16Gi
