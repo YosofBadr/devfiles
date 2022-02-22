@@ -19,6 +19,7 @@ components:
       image: registry.access.redhat.com/ubi8/nodejs-14:latest
       memoryLimit: 1024Mi
       mountSources: true
+      command: ['sleep', 'infinity']
       sourceMapping: /project
       endpoints:
         - name: http-3000
