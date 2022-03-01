@@ -19,7 +19,8 @@ commands:
   - id: testcommand2
     exec:
       component: test-component
-      commandLine: "rm doesntexit"
+      commandLine: "touch testFile2"
+      workingDir: /projects
 events:
   postStart:
     - testcommand
