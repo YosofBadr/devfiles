@@ -1,0 +1,33 @@
+schemaVersion: 2.0.0
+metadata:
+  name: public-repository
+components:
+  - name: test-component
+    container:
+      image: public.ecr.aws/amazonlinux/amazonlinux:2
+      mountSources: true
+      command: ['sleep', 'infinity']
+      env:
+        - name: "TEST_ENV"
+          value: ""
+commands:
+  - id: testcommand
+    exec:
+      component: test-component
+      commandLine: "touch testFile"
+      workingDir: /projects
+  - id: testcommand2
+    exec:
+      component: test-component
+      commandLine: "touch testFile2"
+      workingDir: /projects
+  - id: testcommand3
+    exec:
+      component: test-component
+      commandLine: "rm non existent"
+      workingDir: /projects
+events:
+  postStart:
+    - testcommand
+    - testcommand3
+    - testcommand2
