@@ -16,7 +16,7 @@ commands:
   - id: poststart2
     exec:
       component: test-component
-      commandLine: "echo bob"
+      commandLine: "rm doesNotExist"
       workingDir: /projects
   - id: poststart3
     exec:
