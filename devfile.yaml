@@ -1,30 +1,27 @@
 schemaVersion: 2.0.0
 metadata:
-  name: public-repository
+  name: al2
 components:
-  - name: test-component
+  - name: test
     container:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
-      command: ["sleep", "infinity"]
+      command: ['sleep', 'infinity']
+      env:
+        - name: TEST_ENV
+          value: mde-service-test
 commands:
-  - id: poststart1
+  - id: testcommand
     exec:
-      component: test-component
+      component: test
       commandLine: "touch testFile"
       workingDir: /projects
-  - id: poststart2
+  - id: testcommand2
     exec:
-      component: test-component
-      commandLine: "echo test"
-      workingDir: /projects
-  - id: poststart3
-    exec:
-      component: test-component
+      component: test
       commandLine: "touch testFile2"
       workingDir: /projects
 events:
   postStart:
-    - poststart1
-    - poststart2
-    - poststart3
+    - testcommand
+    - testcommand2
