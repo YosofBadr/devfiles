@@ -24,7 +24,7 @@ commands:
   - id: testcommand3
     exec:
       component: test-component
-      commandLine: "rm non existent"
+      commandLine: "rm doesNotExist"
       workingDir: /projects
 events:
   postStart:
