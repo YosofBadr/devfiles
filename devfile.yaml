@@ -7,9 +7,6 @@ components:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
       command: ['sleep', 'infinity']
-      env:
-        - name: TEST_ENV
-          value: mde-service-test
 commands:
   - id: testcommand
     exec:
