@@ -33,5 +33,6 @@ commands:
       parallel: false
 events:
   postStart:
-    - testcommand
-    - testcommand2
+    - test1
+    - compcmd2
+    - test2
