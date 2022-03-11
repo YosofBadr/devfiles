@@ -1,26 +1,22 @@
 schemaVersion: 2.0.0
 metadata:
-  name: public-repository
+  name: al2
 components:
-  - name: test-component
+  - name: test
     container:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
       command: ['sleep', 'infinity']
-      env:
-        - name: "TEST_ENV"
-          value: ""
 commands:
   - id: testcommand
     exec:
-      component: test-component
-      commandLine: "touch testFile"
-      workingDir: /projects
+      component: test
+      commandLine: "chmod +x script.sh"
+      workingDir: /projects/devfiles
   - id: testcommand2
     exec:
-      component: test-component
-      commandLine: "touch testFile2"
-      workingDir: /projects
+      component: test
+      commandLine: "./projects/devfiles/script.sh"
 events:
   postStart:
     - testcommand
