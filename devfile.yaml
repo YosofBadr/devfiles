@@ -17,9 +17,20 @@ commands:
     exec:
       component: test
       commandLine: "./projects/devfiles/script.sh"
-      group:
-        kind: build
-        isDefault: true
+ - id: test1
+    exec:
+      component: test
+      commandLine: "touch testFile1"
+  - id: test2
+    exec:
+      component: test
+      commandLine: "touch testFile2"
+  - id: compositecommand
+    composite:
+      commands:
+        - test1
+        - test2
+      parallel: false
 events:
   postStart:
     - testcommand
