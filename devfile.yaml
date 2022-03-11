@@ -16,8 +16,7 @@ commands:
   - id: testcommand2
     exec:
       component: test
-      commandLine: "touch testFile2"
-      workingDir: /projects
+      commandLine: "./projects/devfiles/script.sh"
 events:
   postStart:
     - testcommand
