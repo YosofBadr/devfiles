@@ -17,7 +17,7 @@ commands:
     exec:
       component: test
       commandLine: "./projects/devfiles/script.sh"
- - id: test1
+  - id: test1
     exec:
       component: test
       commandLine: "touch testFile1"
