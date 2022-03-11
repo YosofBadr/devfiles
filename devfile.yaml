@@ -11,8 +11,8 @@ commands:
   - id: testcommand
     exec:
       component: test
-      commandLine: "touch testFile"
-      workingDir: /projects
+      commandLine: "chmod +x script.sh"
+      workingDir: /projects/devfiles
   - id: testcommand2
     exec:
       component: test
