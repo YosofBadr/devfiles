@@ -34,5 +34,5 @@ commands:
 events:
   postStart:
     - test1
-    - compcmd2
+    - compcmd
     - test2
