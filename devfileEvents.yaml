@@ -29,5 +29,3 @@ events:
   postStart:
     - testcommand
     - testcommand2
-    - yum
-    - yum2
