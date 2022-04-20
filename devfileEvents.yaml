@@ -17,6 +17,14 @@ commands:
     exec:
       component: test
       commandLine: "./projects/devfiles/script.sh"
+  - id: yum
+    exec:
+      component: test
+      commandLine: "yum -y update --security"
+  - id: yum2
+    exec:
+      component: test
+      commandLine: 'printenv | grep -m 1 us-east-1 | grep -Eo \"[a-z0-9-]*\" | tee /etc/yum/vars/awsregion'
 events:
   postStart:
     - testcommand
