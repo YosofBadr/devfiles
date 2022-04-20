@@ -24,7 +24,7 @@ commands:
   - id: yum2
     exec:
       component: test
-      commandLine: "printenv | grep -m 1 us-east-1 | grep -Eo \"[a-z0-9-]*\" | tee /etc/yum/vars/awsregion"
+      commandLine: "printenv | grep -m 1 AWS_REGION | grep -Eo \"[a-z0-9-]*\" | tee /etc/yum/vars/awsregion"
 events:
   postStart:
     - testcommand
