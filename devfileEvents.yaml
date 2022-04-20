@@ -24,7 +24,19 @@ commands:
   - id: yum2
     exec:
       component: test
-      commandLine: "printenv | grep -m 1 AWS_REGION | grep -Eo \"[a-z0-9-]*\" | tee /etc/yum/vars/awsregion"
+      commandLine: 'printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | tee /etc/yum/vars/awsregion'
+  - id: yum3
+    exec:
+      component: test
+      commandLine: 'printenv | grep -m 1 AWS_REGION | grep -Eo \"[a-z0-9-]*\" | tee /etc/yum/vars/awsregion'
+  - id: yum4
+    exec:
+      component: test
+      commandLine: "printenv | grep -m 1 AWS_REGION | grep -Eo '[a-z0-9-]*' | tee /etc/yum/vars/awsregion"
+  - id: yum5
+    exec:
+      component: test
+      commandLine: printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | tee /etc/yum/vars/awsregion
 events:
   postStart:
     - testcommand
