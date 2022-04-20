@@ -1,0 +1,26 @@
+schemaVersion: 2.1.0
+metadata:
+  name: cloudshell-customer-image
+  version: 1.0.0
+  displayName: CloudShell Customer Image
+  description: Stack with CloudShell pre-installed tools
+  tags: ["aws", "al2", "cloudshell"]
+  projectType: "aws"
+commands:
+  - id: yum-hook
+    exec:
+      component: cloudshell-runtime
+      commandLine: sudo yum -y update --security
+  - id: yum-config
+    exec:
+      component: cloudshell-runtime
+      commandLine: printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | sudo tee /etc/yum/vars/awsregion
+events:
+  postStart: 
+    - yum-config
+    - yum-hook
+components:
+  - name: cloudshell-runtime
+    container:
+      image: 373123033810.dkr.ecr.us-east-1.amazonaws.com/scallop-customer-image:patched-image-2022-4-8-9-29
+      mountSources: false
