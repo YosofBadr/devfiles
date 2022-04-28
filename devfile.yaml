@@ -25,6 +25,14 @@ commands:
     exec:
       component: test
       commandLine: "touch testFile2"
+  - id: yum1
+    exec:
+      component: test
+      commandLine: sudo yum -y update --security  
+  - id: yum2
+    exec:
+      component: test
+      commandLine: printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | sudo tee /etc/yum/vars/awsregion
   - id: compcmd
     composite:
       commands:
