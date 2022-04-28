@@ -31,8 +31,3 @@ commands:
         - test1
         - test2
       parallel: false
-events:
-  postStart:
-    - test1
-    - compcmd
-    - test2
