@@ -4,7 +4,7 @@ metadata:
 components:
   - name: test
     container:
-      image: public.ecr.aws/m6n9x9u2/universalimage:latest
+      image: public.ecr.aws/m6n9x9u2/scallop-image:latest
       mountSources: true
       command: ['sleep', 'infinity']
 commands:
