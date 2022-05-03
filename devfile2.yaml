@@ -1,0 +1,41 @@
+schemaVersion: 2.0.0
+metadata:
+  name: al2
+components:
+  - name: test
+    container:
+      image: 233071671103.dkr.ecr.eu-west-1.amazonaws.com/barsecrrepo-c89d49ae445c8cf7d52233b030ff0b8117dbbc26:live_universal_100
+      mountSources: true
+      command: ['sleep', 'infinity']
+commands:
+  - id: testcommand
+    exec:
+      component: test
+      commandLine: "chmod +x script.sh"
+      workingDir: /projects/devfiles
+  - id: testcommand2
+    exec:
+      component: test
+      commandLine: "./projects/devfiles/script.sh"
+  - id: test1
+    exec:
+      component: test
+      commandLine: "touch testFile1"
+  - id: test2
+    exec:
+      component: test
+      commandLine: "touch testFile2"
+  - id: yum1
+    exec:
+      component: test
+      commandLine: yum -y update --security  
+  - id: yum2
+    exec:
+      component: test
+      commandLine: printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | tee /etc/yum/vars/awsregion
+  - id: compcmd
+    composite:
+      commands:
+        - test1
+        - test2
+      parallel: false
