@@ -12,7 +12,7 @@ components:
       image: public.ecr.aws/aws-mde/universal-image:latest
       mountSources: true
       command: ['sleep', 'infinity']
-      volumeMounts:
+      volum eMounts:
         - name: docker-store
           path: /var/lib/docker
   - name: docker-store
