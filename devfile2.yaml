@@ -4,6 +4,6 @@ metadata:
 components:
   - name: test
     container:
-      image: 373123033810.dkr.ecr.us-east-1.amazonaws.com/scallop-customer-image:latest-patched
+      image: public.ecr.aws/m6n9x9u2/scallop-image
       mountSources: true
       command: ['sleep', 'infinity']
