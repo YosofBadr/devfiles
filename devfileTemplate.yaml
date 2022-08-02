@@ -7,35 +7,3 @@ components:
       image: public.ecr.aws/amazonlinux/amazonlinux:DOESNOTEXIST
       mountSources: true
       command: ['sleep', 'infinity']
-      env:
-        - name: "TEST_ENV"
-          value: fallback-test
-commands:
-  - id: createfile
-    exec:
-      component: test-component
-      commandLine: "touch testFile"
-      workingDir: /projects
-  - id: failingcommand
-    exec:
-      component: test-component
-      commandLine: "rm doesNotExist"
-      workingDir: /projects
-  - id: yum-hook
-    exec:
-      component: test-component
-      commandLine: yum -y update --security
-  - id: yum-config
-    exec:
-      component: test-component
-      commandLine: printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | tee /etc/yum/vars/awsregion
-  - id: bashcreatefile
-    exec:
-      component: test-component
-      commandLine: /bin/bash -c "touch testFile"
-  - id: unsupportedcommandtype
-    composite:
-      commands: 
-        - createfile
-        - failingcommand
-      parallel: false
