@@ -1,0 +1,41 @@
+schemaVersion: 2.0.0
+metadata:
+  name: public-repository
+components:
+  - name: "%s"
+    container:
+      image: "%s"
+      mountSources: true
+      command: ["%s"]
+      env:
+        - name: "TEST_ENV"
+          value: "%s"
+commands:
+  - id: createfile
+    exec:
+      component: "%s"
+      commandLine: "touch testFile"
+      workingDir: /projects
+  - id: failingcommand
+    exec:
+      component: "%s"
+      commandLine: "rm doesNotExist"
+      workingDir: /projects
+  - id: yum-hook
+    exec:
+      component: "%s"
+      commandLine: yum -y update --security
+  - id: yum-config
+    exec:
+      component: "%s"
+      commandLine: printenv | grep -m 1 AWS_REGION | grep -Eo "[a-z0-9-]*" | tee /etc/yum/vars/awsregion
+  - id: bashcreatefile
+    exec:
+      component: "%s"
+      commandLine: /bin/bash -c "touch testFile"
+  - id: unsupportedcommandtype
+    composite:
+      commands: 
+        - createfile
+        - failingcommand
+      parallel: false
