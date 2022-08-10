@@ -1,0 +1,14 @@
+schemaVersion: 2.0.0
+metadata:
+  name: al2
+components:
+  - name: test
+    container:
+      image: public.ecr.aws/m6n9x9u2/scallop-image
+      mountSources: true
+      command: ['sleep', 'infinity']
+commands:
+  - id: test1
+    exec:
+      component: test
+      commandLine: "touch testFile1"
