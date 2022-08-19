@@ -7,7 +7,7 @@ components:
       image: public.ecr.aws/m6n9x9u2/scallop-image
       mountSources: true
       command: ['sleep', 'infinity']
-commands:
+commadnds:
   - id: test1
     exec:
       component: test
