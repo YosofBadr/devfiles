@@ -1,14 +1,19 @@
 schemaVersion: 2.0.0
 metadata:
-  name: al2
+  name: aws-universal
+  version: 1.0.1
+  displayName: AWS Universal
+  description: Stack with AWS Universal Tooling
+  tags: ["aws", "al2"]
+  projectType: "aws"
 components:
-  - name: test
+  - name: aws-runtime
     container:
-      image: public.ecr.aws/m6n9x9u2/scallop-image
+      image: "public.ecr.aws/aws-mde/universal-image:0.2"
       mountSources: true
-      command: ['sleep', 'infinity']
-commadnds:
-  - id: test1
-    exec:
-      component: test
-      commandLine: "touch testFile1"
+      volumeMounts:
+        - name: docker-store
+          path: /var/lib/docker
+  - name: docker-store
+    volume:
+      size: 16Gi
