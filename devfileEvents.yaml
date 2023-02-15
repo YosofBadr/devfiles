@@ -7,6 +7,9 @@ components:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
       command: ['sleep', 'infinity']
+  - name: dockerstore
+    volume:
+      size: 256Gi
 commands:
   - id: setupscript
     exec:
