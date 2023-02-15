@@ -8,16 +8,16 @@ components:
       mountSources: true
       command: ['sleep', 'infinity']
 commands:
-  - id: setupScript
+  - id: setupscript
     exec:
       component: test
       commandLine: "chmod +x script.sh"
       workingDir: /projects/devfiles
-  - id: executeScript
+  - id: executescript
     exec:
       component: test
       commandLine: "./projects/devfiles/script.sh"
-  - id: yumUpdate
+  - id: yumupdate
     exec:
       component: test
       commandLine: "yum -y update --security"
@@ -27,7 +27,7 @@ commands:
       commandLine: "printenv | grep -m 1 AWS_REGION | grep -Eo \"[a-z0-9-]*\" | tee /etc/yum/vars/awsregion"
 events:
   postStart:
-    - setupScript
-    - executeScript
-    - yumUpdate
+    - setupscript
+    - executescript
+    - yumupdate
     - yum2
