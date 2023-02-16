@@ -19,7 +19,7 @@ commands:
   - id: executescript
     exec:
       component: test
-      commandLine: "./projects/devfiles/script.sh"
+      commandLine: "projects/devfiles/script.sh"
   - id: yumupdate
     exec:
       component: test
