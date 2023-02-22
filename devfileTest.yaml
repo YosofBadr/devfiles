@@ -6,7 +6,7 @@ components:
     container:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
       mountSources: true
-      command: ['sleep', 'infinity']
+      command ['sleep', 'infinity']
       volumeMounts:
         - name: docker-store
           path: /var/lib/docker
