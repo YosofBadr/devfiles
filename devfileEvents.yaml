@@ -32,5 +32,3 @@ events:
   postStart:
     - setupscript
     - executescript
-    - yumupdate
-    - yum2
