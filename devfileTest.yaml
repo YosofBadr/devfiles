@@ -1,7 +1,7 @@
 schemaVersion: 2.0.0
   metadata:
   name: al2
-components:
+ components:
   - name: test
     container:
       image: public.ecr.aws/amazonlinux/amazonlinux:2
