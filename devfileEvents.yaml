@@ -19,7 +19,7 @@ commands:
   - id: executescript
     exec:
       component: test
-      commandLine: "touch bob && echo $BOB > bob"
+      commandLine: "touch bob1 && echo 'Hello' > bob1 && touch bob && echo $BOB > bob"
   - id: yumupdate
     exec:
       component: test
