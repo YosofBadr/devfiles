@@ -14,12 +14,12 @@ commands:
   - id: setupscript
     exec:
       component: test
-      commandLine: "chmod +x script.sh"
+      commandLine: "export BOB='Hello'"
       workingDir: /projects/devfiles
   - id: executescript
     exec:
       component: test
-      commandLine: "/projects/devfiles/script.sh"
+      commandLine: "sudo touch bob && echo $BOB > bob"
   - id: yumupdate
     exec:
       component: test
