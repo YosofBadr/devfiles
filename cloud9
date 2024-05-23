@@ -1,0 +1,14 @@
+schemaVersion: 2.0.0
+metadata:
+  name: aws-universal
+  version: 1.0.1
+  displayName: AWS Universal
+  description: Stack with AWS Universal Tooling
+  tags: ["aws", "al2"]
+  projectType: "aws"
+components:
+  - name: aws-runtime
+    container:
+      image: public.ecr.aws/d8r4t7n0/cloud9-ide-runtime:latest
+      mountSources: true
+      command: ['sleep', 'infinity']
